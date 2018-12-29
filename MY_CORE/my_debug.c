@@ -81,6 +81,10 @@ void dbg_Interpreter(void)
 	{
 		dbg_copydata(recvbuff+8+5); 
 	}
+	else if (samestr((u8*)"setchannel",recvbuff+8))
+	{
+		dbg_copydata(recvbuff+8+5); 
+	}
 	else
 	{
 		dbg_err(1);

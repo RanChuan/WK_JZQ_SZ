@@ -564,12 +564,11 @@ ARM Macro Assembler    Page 9
               00000200 
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
-ork --depend=..\obj\startup_stm32f10x_hd.d -o..\obj\startup_stm32f10x_hd.o -I"F
-:\川~\STM32 F1\2018.9.30 温控集中器 第二套\2018.12.11 温控 集中器 石柱15寸\USER
-\RTE" -ID:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include -ID:\Keil_v
-5\ARM\CMSIS\Include --predefine="__UVISION_VERSION SETA 514" --predefine="STM32
-F10X_MD SETA 1" --list=.\startup_stm32f10x_hd.lst ..\CORE\startup_stm32f10x_hd.
-s
+ork --depend=..\obj\startup_stm32f10x_hd.d -o..\obj\startup_stm32f10x_hd.o -IF:
+\川~\GitHub\WK_JZQ_SZ\USER\RTE -ID:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\D
+evice\Include -ID:\Keil_v5\ARM\CMSIS\Include --predefine="__UVISION_VERSION SET
+A 514" --predefine="STM32F10X_MD SETA 1" --list=.\startup_stm32f10x_hd.lst ..\C
+ORE\startup_stm32f10x_hd.s
 
 
 

@@ -351,11 +351,10 @@ ARM Macro Assembler    Page 6
               00000000 
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
-ork --depend=..\obj\os_cpu_a.d -o..\obj\os_cpu_a.o -I"F:\川~\STM32 F1\2018.9.30
- 温控集中器 第二套\2018.12.11 温控 集中器 石柱15寸\USER\RTE" -ID:\Keil_v5\ARM\P
-ACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include -ID:\Keil_v5\ARM\CMSIS\Include --pr
-edefine="__UVISION_VERSION SETA 514" --predefine="STM32F10X_MD SETA 1" --list=.
-\os_cpu_a.lst ..\UCOSII\PORT\os_cpu_a.asm
+ork --depend=..\obj\os_cpu_a.d -o..\obj\os_cpu_a.o -IF:\川~\GitHub\WK_JZQ_SZ\US
+ER\RTE -ID:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include -ID:\Keil_
+v5\ARM\CMSIS\Include --predefine="__UVISION_VERSION SETA 514" --predefine="STM3
+2F10X_MD SETA 1" --list=.\os_cpu_a.lst ..\UCOSII\PORT\os_cpu_a.asm
 
 
 

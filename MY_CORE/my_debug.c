@@ -83,7 +83,7 @@ void dbg_Interpreter(void)
 	}
 	else if (samestr((u8*)"setchannel",recvbuff+8))
 	{
-		dbg_copydata(recvbuff+8+5); 
+		dbg_setchanel(recvbuff+8+11); 
 	}
 	else
 	{
@@ -163,6 +163,11 @@ void dbg_info (void)
 	if (DBG_INTER_STATE==0) ptxt="没有网络连接\r\n"; else if (DBG_INTER_STATE==1) ptxt="已连接上网关\r\n";
 	else if (DBG_INTER_STATE==2) ptxt="已连接上服务器\r\n"; else ptxt="未知的网络状态\r\n";
 	udp_send(1,DBG_IP,DBG_PORT,(u8*)ptxt,strlen((const char *)ptxt));
+	
+	extern u16 *Get_MyIP(void);
+	sprintf (txtbuff,"无线信道：%d\r\n",((*(Get_MyIP()-1))&0x00ff));
+	udp_send(1,DBG_IP,DBG_PORT,(u8*)txtbuff,strlen(txtbuff));
+	
 	
 	ptxt="文件系统状态：";
 	udp_send(1,DBG_IP,DBG_PORT,(u8*)ptxt,strlen((const char *)ptxt));
@@ -318,6 +323,8 @@ void dbg_help(void)
 	udp_send(1,DBG_IP,DBG_PORT,(u8*)ptxt,strlen((const char *)ptxt));
 	ptxt="\t输入\"oche on\"开启回显\r\n\t输入\"oche off\"关闭回显\r\n";
 	udp_send(1,DBG_IP,DBG_PORT,(u8*)ptxt,strlen((const char *)ptxt));
+	ptxt="\t输入\"setchannel [信道]\"设置无线通信信道\r\n";
+	udp_send(1,DBG_IP,DBG_PORT,(u8*)ptxt,strlen((const char *)ptxt));
 	
 	myfree(txtbuff);
 }
@@ -393,6 +400,29 @@ void dbg_copydata (u8 *buff)
 	udp_send(1,DBG_IP,DBG_PORT,(u8*)txtbuff,strlen((const char *)txtbuff));
 	myfree(txtbuff);
 }
+
+
+
+void dbg_setchanel (u8 *chars)
+{
+	extern u16 *Get_MyIP(void);
+	*(Get_MyIP()-1)=str2num(chars);
+	Save_Config();
+	char *txtbuff=mymalloc(512);
+	sprintf(txtbuff,"已设置无线信道为 %d，重启生效……\r\n",*(Get_MyIP()-1));
+	udp_send(1,DBG_IP,DBG_PORT,(u8*)txtbuff,strlen((const char *)txtbuff));
+	myfree(txtbuff);
+}
+
+
+
+void dbg_setdev (u8 *chars)
+{
+	
+}
+
+
+
 
 
 u16 str2num(u8 *str)

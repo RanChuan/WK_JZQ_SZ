@@ -62,6 +62,8 @@ u16 GetNextDeviceaddr (u8 type,u16 i);
 u16 *GetCfgData (void);
 
 
+		//加载默认配置信息
+void load_test_cfg(void);
 
 
 				//获取设备信息，recv是接收数组

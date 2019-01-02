@@ -65,7 +65,7 @@ void my_w5500 (void * t)
 	
 	while(1)
 	{
-//		delay_ms(100);
+		delay_ms(100);
 		if (net_get_phycstate()==0) continue;//网线没有连接，执行下一次循环
 		if (net_check_parameters()==0)//本机ip地址不合法
 		{

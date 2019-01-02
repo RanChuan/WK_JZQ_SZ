@@ -100,6 +100,8 @@ void my_lcd (void * t)
 	CreateTask (my_lcdsleep, 				0, &my_lcdsleeptack[63],			31)	;	
 	while (1){
 	reclen=0;
+	delay_ms(200);
+
 	if (get_messeg (LCD_MESSEG,meg)==0)//如果接收到了消息
 	{
 		if (meg[0]==2)//设备状态

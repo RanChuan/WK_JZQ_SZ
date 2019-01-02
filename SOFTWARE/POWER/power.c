@@ -2,6 +2,7 @@
 
 #include "includes.h"
 #include "file.h"
+#include "beep.h"
 #define SHCSR    (u32 *)0xE000ED24
 
 
@@ -12,7 +13,10 @@ void SysPowerOn (void)
 	Sys_Init();
 	if (os_init()!=0) { //Load_down();
 	}//不为0初始化失败，一般是文件系统失败
-	
+	else
+	{
+		//Load_up();
+	}
 	u8 *buf=malloc(100);
 	read_json(_T("0:/wk_config.json"),buf,10);
 	

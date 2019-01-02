@@ -59,3 +59,4 @@
 ..\obj\power.o: ..\SOFTWARE\DATA_MAP\data_map.h
 ..\obj\power.o: ..\HARDWARE\STMFLASH\stmflash.h
 ..\obj\power.o: ..\SOFTWARE\FILE\file.h
+..\obj\power.o: ..\HARDWARE\BEEP\beep.h

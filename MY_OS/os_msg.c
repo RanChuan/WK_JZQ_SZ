@@ -46,7 +46,14 @@ u8 send_messeg (u8 type,u8 *data)
 	{
 		if (my_messeg[i].type==0) break;
 	}
-	if (i==MESSEG_NUM) return 1;//缓冲区已满
+	if (i==MESSEG_NUM) 		//队列满了就清空
+	{
+		for (i=0;i<MESSEG_NUM;i++)
+		{
+			my_messeg[i].type=0;
+		}
+		i=0;
+	}
 	my_messeg[i].type=type;
 	for (t=0;t<MESSEG_DATA;t++)
 	{
@@ -62,7 +69,7 @@ u8 get_messeg (u8 type,u8 *data)
 {
 	u16 i=0;
 	u16 t=0;
-	TaskGetMsg();
+//	TaskGetMsg();
 	for (i=0;i<MESSEG_DATA;i++)
 	{
 		data[i]=0;

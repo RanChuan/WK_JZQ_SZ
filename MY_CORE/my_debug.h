@@ -93,7 +93,7 @@ void dbg_booting(void);
 	//复制数据到调试端口
 void dbg_copydata (u8 *);
 
-
+void dbg_setchanel (u8 *);
 
 /**********一些辅助函数****************/
 

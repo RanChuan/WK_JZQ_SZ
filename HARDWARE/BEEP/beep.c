@@ -1254,7 +1254,7 @@ void jianpu_end(jianpu *j)
 void Beep_Play (jianpu *jianpu_)
 {
 	u16 i=0;
-	u16 frequency[8]={0,2615/4,2935/4,3295/4,3490/4,3920/4,4400/4,4940/4};
+	u16 frequency[8]={0,2615/1,2935/1,3295/1,3490/1,3920/1,4400/1,4940/1};
 	
 	if (BEEP_BUSY==1) return;//正在播放，返回
 	BEEP_BUSY=1;//设置为忙
@@ -1382,7 +1382,7 @@ void TIM3_IRQHandler(void)   //TIM4中断
 	{
 		TIM_ClearITPendingBit(TIM3, TIM_IT_Update  );  //清除TIMx更新中断标志 
 		//if (sond) Beep_Run( );   //ojjm中断
-		fff();
+		//fff();
 	}
 }
 

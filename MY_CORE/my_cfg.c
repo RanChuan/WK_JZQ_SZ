@@ -38,7 +38,7 @@ void my_cfg (void * t)
 	if (t){IN_CFG=1;}else{IN_CFG=0;}
 	while (1)
 	{
-		
+		delay_ms(200);
 		if (get_messeg(CFG_MESSEG,m_send)==0)
 		{
 			if (m_send[0]==CFG_CHANGE_CFGMODE)

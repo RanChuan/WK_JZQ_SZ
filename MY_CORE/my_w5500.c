@@ -114,7 +114,7 @@ void wk_client(void)
 			if (net_check_gateway()==TRUE)
 			{
 				DBG_INTER_STATE=1;//连接上网关
-				serch_server();
+				//serch_server();
 			}
 			else
 			{

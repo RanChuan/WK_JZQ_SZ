@@ -388,6 +388,7 @@ u8 RF_SetChannel(u8 channel)
 		u8 recv[6]={0};
 		RF_Get(recv,6);
 		if (samestr("OK",recv)) break;
+		if (recv[4]==setdata[4]) break;
 	}
 	RF_M0=0;
 	RF_M1=0;

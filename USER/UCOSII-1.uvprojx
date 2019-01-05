@@ -730,6 +730,16 @@
             </File>
           </Files>
         </Group>
+        <Group>
+          <GroupName>README</GroupName>
+          <Files>
+            <File>
+              <FileName>ReadMe.txt</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\ReadMe.txt</FilePath>
+            </File>
+          </Files>
+        </Group>
       </Groups>
     </Target>
   </Targets>
